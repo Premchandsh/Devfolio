@@ -14,11 +14,25 @@
     --buttonBgColor: #6573F0;
     --inputBorderColor: #6573f037;
     --buttonTextColor: #ffffff;
+    --textColor: #000;
     --navBoxShadow: 0px 10px 20px rgba(0, 0, 0, 0.040);
     --h2FontSize: 2.2rem;
     --h3FontSize:1.4rem;
     --paragraphFont: 1.15rem;
+    --footerBgColor: #183153;
+    --footerLogoTextColor: #fff;
 }
+
+.dark-theme{
+    --bgColor: #212529;
+    --navlinkColor: #ffffff;
+    --textColor: #ffffff;
+    --buttonBgColor: #6573F0;
+    --inputBorderColor: #6573f037;
+    --navBoxShadow: 0px 10px 20px rgba(255, 255, 255, 0.04);
+    --buttonTextColor: #ffffff;
+}
+
 
 html{
     scroll-behavior: smooth;
@@ -105,14 +119,14 @@ nav{
     top: 0;
     z-index: 99;
     box-shadow: var(--navBoxShadow);
-    background-color: #ffffffba;
+    background-color: var(--bgColor);
     -webkit-backdrop-filter: blur(40px);
     backdrop-filter: blur(40px);
 }
 
 nav a{
     text-decoration: none;
-    color: black;
+    color: var(--textColor);
 }
 
 nav i{
@@ -123,7 +137,7 @@ nav i{
     font-family: "Cookie", cursive;
     font-size: 2.5rem;
     text-decoration: none;
-    color: #000;
+    color: var(--textColor);
 }
 
 .logo-icon{
@@ -148,7 +162,7 @@ nav i{
 .navlinks a{
     font-size: 1.2rem;
     text-decoration: none;
-    color: #000;
+    color: var(--textColor);
     position: relative;
 }
 
@@ -174,13 +188,32 @@ nav i{
 
 #close-icon, #three-line-icon{
     font-size: 1.6rem;
+    color: var(--textColor);
     display: none;
+}
+
+.theme-icon{
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--textColor);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-icon i{
+    font-size: 1.1rem;
+    color: var(--textColor);
 }
 
 /**---- Hero section ----**/
 
 .hero-section{
+    padding-top: 4rem;
     width: 100%;
+    background-color: var(--bgColor);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -188,6 +221,7 @@ nav i{
 
 .hero-section .info .hello-txt{
     font-size: var(--paragraphFont);
+    color: var(--textColor);
 }
 
 .hero-section .info h1{
@@ -195,6 +229,7 @@ nav i{
     margin-top: 0.4rem;
     font-weight: 700;
     margin-bottom: 0.8rem;
+    color: var(--textColor);
 }
 
 .hero-section .info .frontend-txt{
@@ -205,6 +240,7 @@ nav i{
     width: 80%;
     font-size: var(--paragraphFont);
     margin-bottom: 1.5rem;
+    color: var(--textColor);
 }
 
 .hero-section .socials{
@@ -218,7 +254,7 @@ nav i{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px solid hsla(0, 0%, 0%, 0.449);
+    border: 1px solid var(--textColor);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,11 +276,12 @@ nav i{
 
 .hero-section .socials div i{
     font-size: 1.25rem;
+    color: var(--textColor);
 }
 
 .hero-section .socials div a{
     text-decoration: none;
-    color: black;
+    color: var(--textColor);
 }
 
 .hero-section .cta-button-group{
@@ -268,27 +305,32 @@ nav i{
 
 .about-section{
     width: 100%;
+    background-color: var(--bgColor);
     display: flex;
     align-items: center;
     gap: 5rem;
-    margin-top: 2.5rem;
+    padding-top: 7rem;
 }
 
 .about-section h2{
     font-size: var(--h2FontSize);
     margin-bottom: 0.5rem;
+    color: var(--textColor);
 }
 
 .about-section h3{
     font-size: var(--h3FontSize);
     font-weight: 500;
     margin-bottom: 1rem;
+    color: var(--buttonBgColor);
 }
 
 .about-section p{
     font-size: var(--paragraphFont);
     width: 90%;
     margin-bottom: 2.8rem;
+    color: var(--textColor);
+    line-height: 1.5rem;
 }
 
 .about-section .cta-btn a{
@@ -301,73 +343,59 @@ nav i{
 
 .skills-section{
     width: 100%;
+    padding-top: 7rem;
+    background-color: var(--bgColor);
 }
 
 .skills-section h2{
     text-align: center;
     font-size: var(--h2FontSize);
+    color: var(--textColor);
 }
 
-.skills-section h3{
-    font-size: var(--h3FontSize);
-    font-weight: 500;
-}
+
 
 .skill-container{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 2.2rem;
     padding: 1.2rem 0;
+    margin-top: 2rem;
     user-select: none;
 }
 
-.skills-section .tech-skills-section .items{
-    width: 100px;
-    height: 100px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.106);
-    padding: 0.6rem;
-    border-radius: 0.4rem;
+.skill-container .item{
+    width: 140px;
+    height: 140px;
+    border: 1px solid var(--buttonBgColor);
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
+    gap: 1.2rem;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    background-color: var(--bgColor);
+    transition: all ease-in-out 0.2s;
 }
 
-.skills-section .tech-skills-section .items img{
+.skill-container .item img{
     width: 50px;
+    
 }
 
-
-/* Pro Skills section */
-
-.pro-skills-section{
-    margin-top: 4rem;
+.skill-container .item span{
+    color: var(--buttonBgColor);
+    font-size: 1.15rem;
 }
 
-.pro-skills-section .items div{
-    width: 150px;
-    height: 150px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.106);
-    border-radius: 50%;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.skill-container .item:hover{
+    scale: 0.9;
 }
 
-.pro-skills-section .items{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.pro-skills-section .skill-container{
-    display: flex;
-    align-items: center;
+.skill-container .item:active{
+    scale: 1;
 }
 
 
@@ -375,79 +403,92 @@ nav i{
 
 .my-projects-section{
     width: 100%;
-    margin-top: 4rem;
+    padding-top: 7rem;
+    background-color: var(--bgColor);
 }
 
 .my-projects-section h2{
     font-size: var(--h2FontSize);
     text-align: center;
     margin-bottom: 2rem;
+    color: var(--textColor);
 }
 
-.my-projects-section .main-container{
+
+.project-div{
+    width: 380px;
+    height: 440px;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 2px solid var(--buttonBgColor);
+    position: relative;
+}
+
+
+.project-div .image{
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+}
+
+
+.project-div .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-div .pro-title{
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--buttonBgColor);
+}
+
+.project-div .pro-title i{
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
+}
+
+
+.project-div p{
+    font-size: 1rem;
+    text-align: justify;
+    margin-top: 0.7rem;
+    line-height: 1.4rem;
+    color: var(--textColor);
+}
+
+.project-div .tags{
+    position: absolute;
+    bottom: 0.8rem;
+    left: 0.8rem;
     display: flex;
     align-items: center;
-    gap: 1.8rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 0.4rem;
 }
 
-
-.my-projects-section .main-container .project-div{
-    width: 280px;
-    height: 400px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.106);
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.project-div h3{
-    font-size: var(--h3FontSize);
-    margin-top: 0.5rem;
-    margin-bottom: 0.8rem;
-}
-
-.project-div span{
-    font-size: 0.8rem;
-    background-color: #e8eafd;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.2rem;
-    margin-bottom: 5rem;
-}
-
-.project-div li:nth-of-type(1){
-    margin-top: 0.8rem;
-}
-
-.project-div a{
-    padding: 0.8rem 1.8rem;
-    border-radius: 0.4rem;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    width: 100%;
-    color: var(--buttonBgColor);
-    text-align: center;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.11);
-    border: 2px solid var(--buttonBgColor);
-    background-color: var(--bgColor);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.project-div .tags span{
+    border: 1px solid #979797;
+    border-radius: 5rem;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+    color: var(--textColor);
 }
 
 
 /**---- Contact section ----**/
 
 .contact-section{
-    margin-top: 5rem;
+    padding-top: 7rem;
+    background: var(--bgColor);
 }
 
 .contact-section h2{
     font-size: var(--h2FontSize);
     text-align: center;
+    color: var(--textColor);
 }
 
 .contact-container .contact-left{
@@ -471,6 +512,7 @@ nav i{
     outline: none;
     border-radius: 0.4rem;
     border: 1.5px solid var(--inputBorderColor);
+    background-color: var(--bgColor);
 }
 
 .contact-left input:focus, 
@@ -478,10 +520,15 @@ nav i{
     border: 1.5px solid var(--buttonBgColor);
 }
 
+
+input, textarea{
+    color: var(--textColor);
+}
+
 .contact-left button{
     border: none;
     background-color: var(--buttonBgColor);
-    color: var(--bgColor);
+    color: #fff;
     cursor: pointer;
     width: 220px;
 }
@@ -489,18 +536,72 @@ nav i{
 
 .footer-section{
     width: 100%;
-    background-color: var(--buttonBgColor);
+    background-color: var(--footerBgColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.footer-section .logo, .footer-section .logo a{
+    color: var(--footerLogoTextColor);
+}
+
+.footer-section .social-media{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.2rem 0;
+}
+
+.footer-section .social-media a{
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 10rem;
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: all ease 0.2s;
+}
+
+
+.footer-section .social-media a:hover{
+    scale: 1.08;
+}
+
+
+.footer-section .social-media i{
+    font-size: 1rem;
+    color: #183153;
 }
 
 .footer-section p{
     text-align: center;
-    color: var(--bgColor);
+    color: #fff;
     padding-bottom: 2rem;
     font-size: var(--paragraphFont);
 }
 
 
 /**---- Media Queries ----**/
+
+@media (max-width: 1030px) {  
+    .project-div {
+        width: 90%;
+        height: 470px;
+        margin: auto;
+    }
+
+    .project-div .image {
+        height: 270px;
+    }
+}
 
 @media (max-width: 1020px) {  
     .section-padding{
@@ -544,7 +645,7 @@ nav i{
     }
 
     .contact-container {
-        margin-bottom: 2rem;
+        padding-bottom: 2rem;
     }
 }
 
@@ -579,13 +680,14 @@ nav i{
     }
 
     .navlinks a{
-        color: #000;
+        color: var(--textColor);
     }
 
     /* Hero section */
 
     .hero-section {
         width: 100%;
+        padding-top: 5rem;
         flex-direction: column-reverse;
         justify-content: center;
     }
@@ -601,6 +703,7 @@ nav i{
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        padding-top: 5rem;
     }
 
     .about-section p {
@@ -627,7 +730,7 @@ nav i{
     }
 
     .skills-section {
-        margin-top: 4rem;
+        padding-top: 7rem;
     }
 
     .skill-container {
@@ -638,12 +741,37 @@ nav i{
         margin-bottom: 1rem;
     }
 
+    .my-projects-section{
+        padding-top: 7rem;
+    }
+
+    .contact-section{
+        padding-top: 7rem;
+    }
+
     .contact-container {
         flex-direction: column-reverse;
     }
 
     .contact-container .contact-left {
         width: 100%;
+    }
+
+    .footer-section .social-media {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 576px){
+    .project-div {
+        width: 100%;
+        height: 420px;
+    }
+
+    .project-div .image {
+        height: 175px;
     }
 }
 
@@ -675,6 +803,10 @@ nav i{
         text-align: center;
     }
 
+    .hero-section .socials{
+        justify-content: center;
+    }
+
     .about-section .cta-btn{
         width: 100%;
     }
@@ -687,13 +819,9 @@ nav i{
     text-align: center;
     }
 
-    .my-projects-section .main-container .project-div {
-        width: 90%;
-        height: 400px;
-    }
 
     .contact-section {
-        margin-top: 2rem;
+        padding-top: 6rem;
     }
 
     .contact-left button {
@@ -710,5 +838,14 @@ nav i{
 
     .footer-section p {
         padding-bottom: 1rem;
+    }
+
+    .project-div {
+        width: 100%;
+        height: 480px;
+    }
+
+    .project-div .image {
+        height: 175px;
     }
 }
